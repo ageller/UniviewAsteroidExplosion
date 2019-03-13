@@ -17,4 +17,6 @@ __pycache__
 
 # data files #
 ###################
-*gz
+*.gz
+*.csv
+*.raw

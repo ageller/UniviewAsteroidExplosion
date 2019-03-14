@@ -14,8 +14,8 @@ out vec4 fragColor;
 void main()
 {
 	//set the color
-	vec3 color = texture(cmap ,vec2(clamp((damage - dMin)/(dMax - dMin),0.,0.99),0.5)).rgb;
-
+	vec3 color = texture(cmap ,vec2(clamp((damage - dMin)/(dMax - dMin),0.02,0.98),0.5)).rgb;
+	
 	fragColor = vec4(color, alpha);
 	fragColor.a *= uv_fade;
 

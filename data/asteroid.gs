@@ -63,9 +63,8 @@ void main()
 	damage = gl_in[2].gl_Position.y;
 
 	if (time >= eventTime && time < eventTime + dt){
-
-		vec4 pos = vec4(mix(gl_in[0].gl_Position.xyz, gl_in[1].gl_Position.xyz, tFrac), 1.);
-		drawSprite(pos, pSize, 0);
+		vec4 pos = vec4(mix(gl_in[0].gl_Position.xyz, gl_in[1].gl_Position.xyz, tFrac)/1000., 1.); //divided by 1000 because of units in Uniview
+		drawSprite(pos, pSize/1000., 0); //divided by 1000 because of units in Uniview
 	}
 
 }

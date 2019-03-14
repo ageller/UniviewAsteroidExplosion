@@ -3,5 +3,5 @@ uniform float uv_fade;
   
 void main()
 {
-    gl_Position = vec4(uv_vertexAttrib , 1.0);
+	gl_Position = vec4(uv_vertexAttrib , 1.0);
 }

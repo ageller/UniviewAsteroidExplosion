@@ -57,14 +57,14 @@ void main()
 {
 
 	float eventTime = texture(stateTexture, vec2(0.5)).r;
-	float tFrac = (eventTime % dt)/dt
+	float tFrac = mod(eventTime,dt)/dt;
 
 	float time = gl_in[2].gl_Position.x;
 	damage = gl_in[2].gl_Position.y;
 
 	if (time >= eventTime && time < eventTime + dt){
 
-		vec4 pos = vec4(mix(gl_in[0].gl_Position, gl_in[1].gl_Position, tFrac), 1.);
+		vec4 pos = vec4(mix(gl_in[0].gl_Position.xyz, gl_in[1].gl_Position.xyz, tFrac), 1.);
 		drawSprite(pos, pSize, 0);
 	}
 

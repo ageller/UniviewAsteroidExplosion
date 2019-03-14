@@ -2,7 +2,7 @@ uniform float uv_fade;
 
 uniform sampler2D cmap;
 uniform float eventTime;
-
+uniform float alpha;
 uniform float dMin;
 uniform float dMax;
 
@@ -15,7 +15,6 @@ void main()
 {
 	//set the color
 	vec3 color = texture(cmap ,vec2(clamp((damage - dMin)/(dMax - dMin),0.,0.99),0.5)).rgb;
-	float alpha = 1.;
 
 	fragColor = vec4(color, alpha);
 	fragColor.a *= uv_fade;

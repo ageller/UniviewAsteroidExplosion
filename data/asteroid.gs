@@ -16,7 +16,7 @@ uniform sampler2D stateTexture;
 out vec2 texcoord;
 out float damage;
 
-#define dt 1000
+#define dt 2000
 
 // axis should be normalized
 mat3 rotationMatrix(vec3 axis, float angle)

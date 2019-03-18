@@ -56,7 +56,7 @@ void drawSprite(vec4 position, float radius, float rotation)
 void main()
 {
 
-	float eventTime = texture(stateTexture, vec2(0.5)).r;
+	float eventTime = clamp(texture(stateTexture, vec2(0.5)).r, 0, 130000.);
 	float tFrac = mod(eventTime,dt)/dt;
 
 	float time = gl_in[2].gl_Position.x;
